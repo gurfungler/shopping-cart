@@ -26,6 +26,7 @@ h5 {
 /* CSS */
 button {
   align-items: center;
+  justify-content: center;
   background-color: #0276ff;
   border-radius: 8px;
   border-style: none;
@@ -39,7 +40,7 @@ button {
   font-family: "RM Neue", sans-serif;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0;
+  margin: 5px;
   padding: 10px 21px;
   text-align: center;
   text-transform: none;
@@ -48,7 +49,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100px;
+  width: 70px;
   height: 45px;
 }
 
@@ -58,4 +59,12 @@ button:active {
 
 button:hover {
   background-color: #1c84ff;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

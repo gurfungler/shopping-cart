@@ -1,4 +1,5 @@
 import React from "react";
+import "./Styles/App.css";
 
 /*
 3 pages
@@ -13,7 +14,7 @@ display total price
 
 */
 function App() {
-  return <div>App</div>;
+  return <div className="background">App</div>;
 }
 
 export default App;

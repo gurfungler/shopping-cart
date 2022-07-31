@@ -3,10 +3,11 @@ import App from "./App";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
 import Navbar from "./Components/Navbar";
-import { useEffect } from "react";
 import { useState } from "react";
+import "./Styles/MainStyle.css";
 const RouteSwitch = () => {
   const [cart, setCart] = useState(new Array(10).fill(0));
+  //cart has a parrallel index to the items fromthe catalog, incriments to show the  # in the cart
   return (
     <div>
       <BrowserRouter>
@@ -26,18 +27,5 @@ const RouteSwitch = () => {
     </div>
   );
 };
-/*
-shop
-              cart={cart}
-              setCart={setCart}
-              catalog={catalog}
-              handleDecrement={handleDecrement}
-              handeIncrement={handeIncrement}
 
-cart
-              cart={cart}
-              catalog={catalog}
-              handleDecrement={handleDecrement}
-              handeIncrement={handeIncrement}
-*/
 export default RouteSwitch;

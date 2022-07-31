@@ -1,13 +1,20 @@
 import React from "react";
 import Card from "./ShopComponents/Card.js";
 import items from "../Components/catalog";
-import "./ShopComponents/Shop.css";
+import "../Styles/Shop.css";
 const Shop = ({ setCart, cart }) => {
-  const handleClick = (e) => {
+  //handle click takes the index of the item and increments it in the cart
+  const handleIncriment = (index) => {
     let newArr = cart;
-    newArr[e] += 1;
+    newArr[index] += 1;
     setCart([...newArr]);
-    console.log(cart);
+  };
+  const handleDecriment = (index) => {
+    let newArr = cart;
+    if (newArr[index] !== 0) {
+      newArr[index] -= 1;
+      setCart([...newArr]);
+    }
   };
   return (
     <div className="centered">
@@ -17,7 +24,8 @@ const Shop = ({ setCart, cart }) => {
             name={items[i].name}
             imgSrc={items[i].src}
             index={items[i].index}
-            handleClick={handleClick}
+            handleIncriment={handleIncriment}
+            handleDecriment={handleDecriment}
             amount={cart[i]}
             key={i}
           />
@@ -26,11 +34,4 @@ const Shop = ({ setCart, cart }) => {
     </div>
   );
 };
-/*
-        
-      <Navbar />
-      {[...new Array[catalog.length]()].map((e, index) => {
-        return <Card />;
-      })}
-*/
 export default Shop;
